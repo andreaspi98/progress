@@ -1,0 +1,269 @@
+
+
+/* Sezione Chi Sono */
+.chi-sono {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px;
+    padding: 30px 20px;
+    align-items: center; 
+    background-color: #f7f9fa;
+}
+
+
+.foto {
+    display: flex;
+    flex-direction: column; /* Disporre immagine e bottone in colonna */
+    align-items: center;
+    flex-basis: 350px; /* Imposta una larghezza fissa per l'immagine */
+    margin-top: 20px; /* Aggiunta di margine per spostare l'immagine più in basso */
+    justify-content: center; /* Centra l'immagine orizzontalmente */
+
+}
+
+.foto .image-container {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    border: 5px solid #2a4f69; 
+    overflow: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 1s ease-in-out;
+}
+
+.hidden {
+    opacity: 0; /* Nasconde l'immagine con una transizione */
+}
+
+
+.descrizione {
+    flex: 1;
+    padding-left: 20px; /* Distanza tra la foto e la descrizione */
+    max-width: 100%;
+}
+
+/* Stili generali per i bottoni */
+.cv-button {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    background-color: #2a4f69; 
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease;
+}
+
+/* Hover per il bottone */
+.cv-button:hover {
+    background-color: #1abc9c; 
+    transform: scale(1.05); 
+}
+
+/* Bottone per schermi grandi (Desktop) */
+.cv-button-large {
+    display: block; /* Mostra il bottone per desktop */
+    margin-top: 20px; /* Distanza tra l'immagine e il bottone */
+}
+
+/* Bottone per schermi piccoli (Mobile) */
+.cv-button-small {
+    display: none; /* Nasconde il bottone per mobile */
+}
+
+/* Responsività per dispositivi piccoli */
+@media (max-width: 768px) {
+    .chi-sono {
+        flex-direction: column; /* Dispone gli elementi uno sopra l'altro */
+        text-align: center; /* Centra tutto il contenuto */
+        align-items: center; /* Allinea gli elementi orizzontalmente */
+        padding: 0px 0px;
+    }
+
+    .foto {
+        margin-bottom: 0px; /* Distanza tra foto e descrizione */
+        align-items: center; /* Centra l'immagine */
+        flex-basis: auto; /* Rimuove la larghezza fissa */
+        margin-top: 0; /* Rimuove il margine superiore su mobile */
+        justify-content: center; /* Centra l'immagine orizzontalmente */
+    }
+
+    .download-cv {
+        text-align: center;
+        margin-top: 20px;
+        display: flex;
+        justify-content: center; /* Centra il bottone */
+        width: 100%;
+    }
+
+    /* Mostra il bottone per mobile e nascondi quello per desktop */
+    .cv-button-large {
+        display: none; /* Nasconde il bottone per desktop */
+    }
+
+    .cv-button-small {
+        display: block; /* Mostra il bottone per mobile */
+        width: 90%; /* Rende il bottone più largo su dispositivi mobili */
+        max-width: 300px;
+        margin-top: 20px; /* Distanza tra l'immagine e il bottone */
+    }
+
+    .cv-button {
+        font-size: 16px; /* Riduce la dimensione del font su dispositivi mobili */
+    }
+
+    .descrizione {
+        max-width: 93%; /* Permette al testo di occupare tutta la larghezza */
+        padding-left: 0px
+
+    }
+}
+
+/* Stili aggiuntivi */
+h2 {
+    margin-bottom: 20px;
+    color: #2a4f69;
+    font-size: 48px;
+    text-align: center;
+}
+
+.descrizione p {
+    margin-bottom: 10px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.line-wrapper {
+    position: relative;
+    z-index: 1;
+    background-color: #f7f9fa;
+    margin-top: -10px; /* Aggiusta il margine se necessario */
+    margin: 0;
+}
+
+.decorative-line {
+    height: 3px;
+    background-color: #2a4f69;
+    width: 80%;
+    margin: 20px auto;
+    border-radius: 5px;
+}
+
+
+
+/* Sezione principale */
+.timeline {
+    position: relative;
+    padding: 40px 20px;
+    background-color: #f7f9fa;
+}
+
+.timeline h2 {
+    text-align: center;
+    color: #2a4f69;
+    margin-bottom: 30px;
+    font-size: 40px;
+}
+
+/* Linea centrale */
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 35px;
+    left: 38px; /* Linea sempre a sinistra */
+    width: 4px;
+    height: 100%;
+    background-color: #2a4f69;
+    z-index: 1;
+}
+
+/* Elementi della timeline */
+.timeline-item {
+    position: relative;
+    width: 105%; /* Ogni elemento occupa tutta la larghezza */
+    padding-left: 40px; 
+    margin-bottom: 20px;
+    
+}
+
+/* Contenuto degli elementi */
+.timeline-item .contenuto {
+    position: relative;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    width: calc(100% - 40px); /* Lascia spazio alla linea */
+    z-index: 2;
+}
+
+/* Connettori (punti sulla linea centrale) */
+.timeline-item .contenuto::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: -30px; /* Allinea il punto alla linea */
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border: 4px solid #2a4f69;
+    border-radius: 50%;
+    z-index: 3;
+}
+
+/* Rimuovere logica a scacchiera */
+.timeline-item.sinistra,
+.timeline-item.destra {
+    text-align: left; /* Allinea tutto a sinistra */
+}
+
+@media (min-width: 1024px) {
+    .timeline {
+        padding: 40px 0;
+    }
+
+    .timeline::before {
+        left: 50%; /* La linea centrale è al centro */
+        transform: translateX(-50%);
+        top: 150px;
+    }
+
+    .timeline-item {
+        width: 50%; /* Ogni riquadro occupa metà larghezza */
+    }
+
+    .timeline-item.sinistra {
+        left: -35px; /* Riquadro sinistro allineato a sinistra */
+        text-align: right; /* Testo allineato a destra */
+    }
+
+    .timeline-item.destra {
+        left: 50% ; /* Riquadro destro allineato alla metà destra */
+        text-align: left; /* Testo allineato a sinistra */
+    }
+
+    .timeline-item .contenuto {
+        max-width: 80%; /* Contenuto più compatto su schermi grandi */
+    }
+
+    .timeline-item.sinistra .contenuto::before {
+        left:calc(100% + 25px);
+        
+        
+    }
+
+    .timeline-item.destra .contenuto::before {
+        left: -50px; /* Pallino allineato alla linea centrale sul lato sinistro */
+    }
+
+}

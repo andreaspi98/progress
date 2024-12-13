@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Andrea Spinelli</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/comune.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index.html"><img src="img/logo.png" alt="Logo"></img></a>
+        </div>
+        <div id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul id="menu" class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="chi_sono.html">Chi Sono</a></li>
+            <li><a href="lavori.html">I Miei Lavori</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+    </nav>
+
+    <div class="carousel-container">
+        <button id="prev" class="carousel-button">⟨</button>
+        <div class="carousel-slide">
+            <img src="img/1_2.jpeg" alt="Immagine 1">
+            <img src="img/3.jpeg" alt="Immagine 2">
+            <img src="img/2.jpeg" alt="Immagine 3">
+            <img src="img/4.jpeg" alt="Immagine 4">
+            <img src="img/5.jpeg" alt="Immagine 5">
+        </div>
+        <button id="next" class="carousel-button">⟩</button>
+    </div>
+
+    <div class="terminal-container">
+        <!-- Colonna Sinistra -->
+        <div class="left-column">
+            <h2>Prova questo piccolo programmino da terminale in JS!</h2>
+            <div id="terminal">Ciao, come ti chiami?</div>
+            <input id="commandInput" type="text" placeholder="Inserisci il tuo nome...">
+            <button id="startButton">Esegui Codice</button>
+        </div>
+
+        <!-- Colonna Destra -->
+        <div class="right-column">
+            <h3>
+                <strong>Benvenuto nel mio portfolio digitale!</strong>
+            </h3>
+            <p>Salve,mi chiamo Andrea Francesco Spinelli!</p>
+            <p>
+                Ragazzo appassionato di programmazione e sviluppo software, sono attualmente in fase di apprendimento e crescita nel campo della programmazione. 
+                Questo sito è stato creato da me utilizzando HTML, CSS e JavaScript, e rappresenta una raccolta dei progetti che sto realizzando durante il mio percorso. 
+                Ogni progetto è un'opportunità per me per esplorare nuove tecnologie e affinare le mie competenze nel creare soluzioni pratiche e funzionali.
+            </p>
+            <p>Esplora i miei lavori, scopri chi sono e non esitare a contattarmi per qualsiasi opportunità di collaborazione o per scambiare idee!</p>
+        </div>
+    </div>
+
+    <div class="quote-box">
+        <div class="quote-content">
+            <p>“Chiunque abbia perso la nozione del tempo mentre usava un computer conosce la propensione a sognare, il bisogno di realizzare i propri sogni e la tendenza a saltare i pasti.”</p>
+            <div class="author">– Tim Berners-Lee</div>
+        </div>
+    </div>
+    
+
+    <footer>
+        <p>Seguimi sui social:</p>
+    <p class="social-links">
+        <a href="https://www.facebook.com/share/1875F6vMMQ/?mibextid=LQQJ4d" class="fab fa-facebook-f" target="_blank"></a> <!-- Icona Facebook -->
+        <a href="https://www.linkedin.com/in/andrea-francesco-spinelli-anno1998?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="fab fa-linkedin-in" target="_blank"></a> <!-- Icona LinkedIn -->
+        <a href="https://www.instagram.com/_andrea__spinelli_?igsh=dHB5dTlkaGtseWto&utm_source=qr" class="fab fa-instagram" target="_blank"></a> <!-- Icona Instagram -->
+    </p>
+    <p>© 2024 Andrea Francesco Spinelli. Tutti i diritti riservati.</p>
+    </footer>
+    
+
+    <script>
+        // Seleziona il bottone dell'icona hamburger
+        const menuToggle = document.getElementById("menu-toggle");
+        // Seleziona il menu (ul) che deve essere mostrato/nascosto
+        const menu = document.getElementById("menu");
+    
+        // Aggiungi un event listener per l'icona hamburger
+        menuToggle.addEventListener("click", function() {
+            // Quando clicchi sull'icona, aggiungi o rimuovi la classe 'active' al menu e al toggle
+            menu.classList.toggle("active"); // Mostra o nasconde il menu
+            menuToggle.classList.toggle("active"); // Cambia l'icona hamburger (ruotando)
+        });
+    </script>
+
+
+
+<script>
+    // Seleziona gli elementi
+const slide = document.querySelector('.carousel-slide');
+const images = document.querySelectorAll('.carousel-slide img');
+const prevButton = document.getElementById('prev');
+const nextButton = document.getElementById('next');
+
+// Imposta l'indice iniziale
+let currentIndex = 0;
+
+// Calcola dinamicamente la larghezza della slide
+function getSlideWidth() {
+    return document.querySelector('.carousel-container').clientWidth;
+}
+
+// Funzione per spostarsi a una slide specifica
+function moveToSlide(index) {
+    const slideWidth = getSlideWidth();
+    slide.style.transform = `translateX(${-index * slideWidth}px)`;
+}
+
+// Navigazione manuale
+prevButton.addEventListener('click', () => {
+    currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+    moveToSlide(currentIndex);
+    resetAutoSlide(); // Reimposta il timer dello scorrimento automatico
+});
+
+nextButton.addEventListener('click', () => {
+    currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+    moveToSlide(currentIndex);
+    resetAutoSlide(); // Reimposta il timer dello scorrimento automatico
+});
+
+// Scorrimento automatico
+function autoSlide() {
+    currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+    moveToSlide(currentIndex);
+}
+
+// Imposta lo scorrimento automatico ogni 5 secondi
+let autoSlideInterval = setInterval(autoSlide, 5000);
+
+// Reimposta il timer dello scorrimento automatico
+function resetAutoSlide() {
+    clearInterval(autoSlideInterval); 
+    autoSlideInterval = setInterval(autoSlide, 5000); 
+}
+
+// Ricalcola la larghezza al ridimensionamento della finestra
+window.addEventListener('resize', () => {
+    moveToSlide(currentIndex);
+});
+</script>
+
+<script>
+        
+        function executeCode() {
+            let terminal = document.getElementById('terminal');
+            let userName = document.getElementById('commandInput').value.trim();
+
+            if (userName === '') {
+                terminal.textContent = "Per favore, inserisci un nome.";
+                return;
+            }
+
+            terminal.textContent = ''; // Resetta il terminale
+
+            
+            terminal.textContent += `👋 Benvenuto nel mio portfolio digitale ${userName}!\n`;
+            terminal.textContent += "🔄 Inizializzazione...\n";
+
+            
+            const steps = ["Progetti", "Codice", "Creatività"];
+            steps.forEach((step, index) => {
+                
+                setTimeout(() => {
+                    terminal.textContent += `⏩ Caricamento ${step}...\n`;
+                    terminal.scrollTop = terminal.scrollHeight; 
+                }, index * 3000); 
+
+                // Dopo 2 secondi, mostra "Step completato"
+                setTimeout(() => {
+                    terminal.textContent += `✅ ${step}: caricamento completato!\n`;
+                    terminal.scrollTop = terminal.scrollHeight; 
+                }, (index * 3000) + 2000); 
+            });
+
+            
+            setTimeout(() => {
+                terminal.textContent += "\n 🎉 Tutto pronto ! Se qualcosa non va, niente panico! È tutto sotto controllo, l’ho fatto apposta per vedere se notavi l’errore...\n";
+                terminal.scrollTop = terminal.scrollHeight; 
+            }, steps.length * 3000); 
+        }
+
+        
+        document.getElementById('startButton').addEventListener('click', executeCode);
+    </script>
+
+    <script>
+        function updatePlaceholder() {
+        const input = document.getElementById('commandInput');
+    
+        if (window.innerWidth <= 768) {
+            input.placeholder = "Inserisci Nome";  // Placeholder per schermi piccoli
+        } else {
+            input.placeholder = "Inserisci il tuo nome...";  // Placeholder per schermi più grandi
+        }
+        }
+
+        
+        window.addEventListener('resize', updatePlaceholder);
+
+        
+        updatePlaceholder();
+    </script>
+
+</body>
+</html>
+
+

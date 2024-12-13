@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Andrea Spinelli</title>
+    <link rel="stylesheet" href="css/lavori.css">
+    <link rel="stylesheet" href="css/comune.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index.html"><img src="img/logo.png" alt="Logo"></img></a>
+        </div>
+        <div id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul id="menu" class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="chi_sono.html">Chi Sono</a></li>
+            <li><a href="lavori.html">I Miei Lavori</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+    </nav>
+    <section class="lavori">
+        <h1>Benvenuto nei miei Lavori</h1>
+        <p>
+            Qui raccolgo i progetti realizzati durante il mio percorso di apprendimento nella programmazione. Ogni progetto racconta un pezzetto della mia crescita e delle tecnologie che sto scoprendo.
+        </p>
+    </section>
+
+    <div class="lavori-image">
+        <img src="img/lavori.png" alt="Immagine di comodo">
+    </div>
+    <br><br>
+
+    <section class="lavori-container">
+        <div class="lavoro-card">
+
+            <div class="project-image">
+                <img src="img/lavori1.png" alt="Immagine di comodo">
+            </div>
+            
+            <div class="lavoro-header">
+                <h2>Azienda: Leader</h2>
+                <p><strong>Ruolo:</strong> Web Developer</p>
+                <p><strong>Linguaggi:</strong> HTML, CSS, JavaScript</p>
+            </div>
+            <button class="btn-mostra" onclick="toggleDescription(1)">Mostra di più</button>
+            <div class="descrizione" id="desc-1">
+                <p>Ho progettato e sviluppato il mio sito web portfolio per presentare le mie competenze e i miei progetti. La struttura è stata realizzata utilizzando HTML5, con un design responsivo e moderno creato tramite CSS3 e framework come Bootstrap per garantire un’esperienza utente ottimale su diversi dispositivi.
+
+                    Per arricchire l’interattività, ho utilizzato JavaScript, integrando funzionalità dinamiche e animazioni fluide. La gestione delle informazioni è stata ottimizzata con un’architettura modulare e semantica, che facilita eventuali aggiornamenti futuri.</p>
+                <p>Durante lo sviluppo, ho applicato principi di accessibilità web e testato il sito su vari browser e dispositivi per garantire una piena compatibilità e un caricamento veloce delle pagine.</p>
+            </div>
+        </div>
+        
+        <div class="lavoro-card">
+
+            <div class="project-image">
+                <img src="img/lavori2.jpg" alt="Immagine di comodo">
+            </div>
+
+            <div class="lavoro-header">
+                <h2>Azienda: Talent Garden</h2>
+                <p><strong>Ruolo:</strong> Corsista</p>
+                <p><strong>Linguaggi:</strong> Solidity</p>
+            </div>
+            <button class="btn-mostra" onclick="toggleDescription(2)">Mostra di più</button>
+            <div class="descrizione" id="desc-2">
+                <p>Il progetto è stato sviluppato a scopo accademico come esercitazione per rispondere a un bando reale emesso da Aeroporti di Puglia S.p.A. Esso si articola in quattro ambiti principali: l'implementazione di un sistema di e-Sourcing per la gestione degli approvvigionamenti IT e TLC, un'accurata valutazione delle vulnerabilità delle infrastrutture aziendali (Assessment), la consulenza da parte di un CISO per la definizione delle strategie di sicurezza informatica, e lo sviluppo di Smart Contract basati su tecnologia blockchain Solidity per ottimizzare processi aeroportuali.</p>
+
+                    <p>Il progetto è stato concepito per simulare una proposta professionale e per approfondire la comprensione di tecnologie e strategie avanzate nell’ambito della sicurezza informatica e della gestione IT.</p>
+            </div>
+        </div>
+        
+        <div class="lavoro-card">
+
+            <div class="project-image">
+                <img src="img/lavori1.png" alt="Immagine di comodo">
+            </div>
+
+            <div class="lavoro-header">
+                <h2>Azienda:</h2>
+                <p><strong>Ruolo:</strong>  </p>
+                <p><strong>Linguaggi:</strong>  </p>
+            </div>
+            <button class="btn-mostra" onclick="toggleDescription(3)">Mostra di più</button>
+            <div class="descrizione" id="desc-3">
+                <p>Descrizione </p>
+            </div>
+        </div>
+        
+        <div class="lavoro-card">
+            
+            <div class="project-image">
+                <img src="img/lavori1.png" alt="Immagine di comodo">
+            </div>
+
+            <div class="lavoro-header">
+                <h2>Azienda:</h2>
+                <p><strong>Ruolo:</strong>  </p>
+                <p><strong>Linguaggi:</strong>  </p>
+            </div>
+            <button class="btn-mostra" onclick="toggleDescription(4)">Mostra di più</button>
+            <div class="descrizione" id="desc-4">
+                <p>Descrizione </p>
+            </div>
+        </div>
+        
+    </section>
+    <br><br>
+
+<footer>
+    <p>Seguimi sui social:</p>
+<p class="social-links">
+    <a href="https://www.facebook.com/share/1875F6vMMQ/?mibextid=LQQJ4d" class="fab fa-facebook-f" target="_blank"></a> <!-- Icona Facebook -->
+        <a href="https://www.linkedin.com/in/andrea-francesco-spinelli-anno1998?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="fab fa-linkedin-in" target="_blank"></a> <!-- Icona LinkedIn -->
+        <a href="https://www.instagram.com/_andrea__spinelli_?igsh=dHB5dTlkaGtseWto&utm_source=qr" class="fab fa-instagram" target="_blank"></a> <!-- Icona Instagram -->
+</p>
+<p>© 2024 Andrea Francesco Spinelli. Tutti i diritti riservati.</p>
+</footer>
+<script src="script.js"></script>
+
+<script>
+    // Seleziona il bottone dell'icona hamburger
+    const menuToggle = document.getElementById("menu-toggle");
+    // Seleziona il menu (ul) che deve essere mostrato/nascosto
+    const menu = document.getElementById("menu");
+
+    // Aggiungi un event listener per l'icona hamburger
+    menuToggle.addEventListener("click", function() {
+        // Quando clicchi sull'icona, aggiungi o rimuovi la classe 'active' al menu e al toggle
+        menu.classList.toggle("active"); // Mostra o nasconde il menu
+        menuToggle.classList.toggle("active"); // Cambia l'icona hamburger (ruotando)
+    });
+</script>
+
+<script>
+    function toggleDescription(id) {
+        var desc = document.getElementById("desc-" + id);
+        if (desc.style.display === "none" || desc.style.display === "") {
+            desc.style.display = "block";
+        } else {
+            desc.style.display = "none";
+        }
+    }
+</script>
+</body>
+</html>

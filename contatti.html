@@ -38,7 +38,7 @@
             <p>
                 <strong>Compila il form per qualsiasi richiesta, domanda o collaborazione. Sarò lieto di risponderti al più presto.</strong>
             </p><br>
-            <form action="https://formspree.io/f/mzzdbavv" method="POST">
+            <form id="contactForm" action="https://formspree.io/f/mzzdbavv" method="POST">
                 <label for="nome">Nome e Cognome</label>
                 <input type="text" id="nome" name="nome" placeholder="Inserisci il tuo nome e cognome" required>
 
@@ -80,6 +80,37 @@
         menuToggle.classList.toggle("active"); // Cambia l'icona hamburger (ruotando)
     });
 </script>
+
+    <script>
+    document.getElementById("contactForm").addEventListener("submit", async function(event) {
+        event.preventDefault(); 
+
+        const form = event.target;
+        const formData = new FormData(form);
+
+        try {
+            // Invia i dati a Formspree
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: formData,
+                headers: {
+                    Accept: "application/json"
+                }
+            });
+
+            if (response.ok) {
+                alert("Grazie per averci contattato! Risponderemo al più presto."); // Mostra il messaggio di ringraziamento
+                form.reset();
+            } else {
+                alert("Si è verificato un errore. Riprova più tardi.");
+            }
+        } catch (error) {
+            console.error("Errore:", error);
+            alert("Si è verificato un errore. Controlla la tua connessione e riprova.");
+        }
+    });
+</script>
+
 
 
 
